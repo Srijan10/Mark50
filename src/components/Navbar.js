@@ -1,4 +1,5 @@
 import React from 'react';
+import { menuData } from '../data/MenuData';
 
 
 const Navbar = () => {
@@ -10,10 +11,9 @@ const Navbar = () => {
              </div>
              <nav>
                  <ul id="MenuItems">
-                     <li className="menutitle">HOME</li>
-                     <li className="menutitle">ABOUT US</li>
-                     <li className="menutitle">OUR SERVICES</li>
-                     <li className="menutitle">CONTACT US</li>
+                     {menuData.map((item, index)=>(
+                         <li className="menutitle" to={item.link} key = {index}>{item.title}</li>
+                     ))}
                  </ul>
              </nav>
          </div>
